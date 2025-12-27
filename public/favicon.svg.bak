@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 734 540" width="32" height="32">
+  <rect width="734" height="540" fill="#000000"/>
+  
+  <!-- M Letter (White) -->
+  <path d="M 134 97 L 290 290 L 290 450 L 200 450 L 200 320 L 134 380 L 68 320 L 68 450 L -22 450 L -22 97 L 56 180 L 134 97 Z" fill="#FFFFFF"/>
+  
+  <!-- K Letter (Orange) -->
+  <path d="M 290 97 L 390 97 L 500 240 L 390 380 L 290 380 L 410 240 L 290 97 Z M 430 97 L 660 380 L 550 450 L 290 97 Z" fill="#FF8C42"/>
+  
+  <!-- Adjustment for K -->
+  <polygon points="290,97 450,97 660,380 550,450 290,450" fill="#FF8C42"/>
+</svg>
