@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Metadata } from "next";
-import { BiEnvelope, BiLogoDiscord, BiMap } from "react-icons/bi";
+import { BiLogoGithub, BiLogoLinkedin, BiMap } from "react-icons/bi";
 import { Slide } from "../animation/Slide";
 import Social from "../components/shared/Social";
 import { profileData } from "../data/profile";
@@ -31,27 +31,27 @@ const iconMap: { [key: string]: any } = {
 };
 
 const story = [
-  "I’m an AI & Machine Learning Engineer who obsessively optimizes product-facing systems. Whether I’m architecting a HIPAA-ready healthcare assistant or fine-tuning a therapeutic chatbot, I focus on keeping latency low, responses grounded in context, and infrastructure production-grade.",
-  "My recent work spans LLM fine-tuning, Retrieval-Augmented Generation (RAG) design, and MLOps automation across FastAPI, LangChain, Docker, and AWS. I love translating ambiguous healthcare or wellness problems into measurable wins—like reducing Memorixal’s response times by 40% while sustaining 99.5% uptime.",
-  "Outside of shipping features, I mentor peers on prompt design, contribute to open-source tooling, and stay sharp through AI competitions. I’m open to Machine Learning, Generative AI, and NLP roles—especially where I can be hands-on with deployment, observability, and continuous improvement.",
+  "I’m an AI Engineer with hands-on experience building production-ready systems across the full AI stack, from LLM fine-tuning and agentic pipeline design to computer vision and RAG architecture.",
+  "I’ve delivered end-to-end projects spanning multi-agent orchestration, semantic search, and generative AI integration, and have applied LLM mathematical reasoning to real-world optimization and resource-allocation problems.",
+  "I’m based in Ankara, Turkey. I speak Arabic (native), English (fluent), and Turkish (conversational).",
 ];
 
 const keyFacts = [
   {
-    label: "Email",
-    value: profileData.email,
-    icon: BiEnvelope,
-    href: `mailto:${profileData.email}`,
+    label: "LinkedIn",
+    value: "Connect on LinkedIn",
+    icon: BiLogoLinkedin,
+    href: profileData.contactLinks[0].url,
   },
   {
-    label: "Discord",
-    value: "ghreeb1",
-    icon: BiLogoDiscord,
-    href: "https://discordapp.com/users/1355151904459456656",
+    label: "GitHub",
+    value: "View GitHub profile",
+    icon: BiLogoGithub,
+    href: profileData.contactLinks[1].url,
   },
   {
-    label: "Availability",
-    value: profileData.availability,
+    label: "Role",
+    value: profileData.title,
   },
   {
     label: "Location",
@@ -67,23 +67,13 @@ const keyFacts = [
 ];
 
 export const metadata: Metadata = {
-  title: "About | Mohamed Khaled Ghareeb",
-  metadataBase: new URL("https://mohamedkhaledghareeb.com/about"),
+  title: "About | Azzam Hesham Al-Sarari",
   description:
-    "Learn more about Mohamed Khaled Ghareeb—an AI & Machine Learning Engineer specializing in Generative AI, NLP, and Computer Vision.",
+    "Learn more about Azzam Hesham Al-Sarari, an AI Engineer working across LLMs, agentic AI, and computer vision.",
   openGraph: {
-    title: "About | Mohamed Khaled Ghareeb",
-    url: "https://mohamedkhaledghareeb.com/about",
+    title: "About | Azzam Hesham Al-Sarari",
     description:
-      "AI & Machine Learning Engineer delivering Generative AI systems, medical imaging pipelines, and production-ready APIs.",
-    images: [
-      {
-        url: "/profile.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Mohamed Khaled Ghareeb portrait",
-      },
-    ],
+      "AI Engineer building intelligent systems with LLMs, agentic AI, and computer vision.",
   },
 };
 
@@ -97,7 +87,7 @@ export default function About() {
               {profileData.title}
             </p>
             <h1 className="font-incognito font-semibold tracking-tight text-4xl sm:text-5xl mb-6 leading-tight">
-              Mohamed Khaled Ghareeb
+              {profileData.name}
             </h1>
             <p className="text-base dark:text-zinc-300 text-zinc-600 leading-relaxed">
               {profileData.summary}
@@ -177,7 +167,7 @@ export default function About() {
                   {profileData.location}
                 </h3>
                 <p className="text-zinc-600 dark:text-zinc-400 mt-2">
-                  Available July 2025 · Open to relocation & remote work
+                  {profileData.education.specialization}
                 </p>
               </div>
             </div>
@@ -316,7 +306,7 @@ export default function About() {
                       </p>
                     </div>
                     <p className="text-base text-zinc-600 dark:text-zinc-300 leading-relaxed mb-8">
-                      {project.focus}
+                      {project.description}
                     </p>
                   </div>
 

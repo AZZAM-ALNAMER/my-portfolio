@@ -13,14 +13,11 @@ type Props = {
 // Dynamic metadata for SEO
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
-    title: "Post | Mohamed Khaled Ghareeb",
-    metadataBase: new URL(`https://mohamedkhaledghareeb.com/blog/${params.post}`),
+    title: `Post | Azzam Hesham Al-Sarari`,
     description: "This post is not available yet.",
     openGraph: {
-      url: `https://mohamedkhaledghareeb.com/blog/${params.post}`,
-      title: "Post | Mohamed Khaled Ghareeb",
+      title: "Post | Azzam Hesham Al-Sarari",
       description: "This post is not available yet.",
-      images: "/profile.jpg",
     },
   };
 }
@@ -53,7 +50,9 @@ export default async function Post({ params }: Props) {
 
             <div className="flex flex-wrap gap-4">
               <a
-                href="mailto:mohamed.khaled.ai01@gmail.com"
+                href="https://www.linkedin.com/in/azzam-alsarari-908b94346/?isSelfProfile=true"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-x-2 bg-tertiary-color text-white px-8 py-4 rounded-xl font-bold hover:scale-[1.02] active:scale-[0.98] transition-all"
               >
                 Request this Topic

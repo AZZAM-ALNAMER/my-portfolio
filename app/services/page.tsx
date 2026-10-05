@@ -14,14 +14,11 @@ import {
 import Interactive from "@/app/components/shared/Interactive";
 
 export const metadata: Metadata = {
-    title: "Services | Mohamed Khaled Ghareeb",
-    metadataBase: new URL("https://mohamedkhaledghareeb.com/services"),
-    description: "AI & Machine Learning Services offered by Mohamed Khaled Ghareeb.",
+    title: "Services | Azzam Hesham Al-Sarari",
+    description: "AI engineering services by Azzam Hesham Al-Sarari.",
     openGraph: {
-        title: "Services | Mohamed Khaled Ghareeb",
-        url: "https://mohamedkhaledghareeb.com/services",
-        description: "AI & Machine Learning Services offered by Mohamed Khaled Ghareeb.",
-        images: "/profile.jpg",
+        title: "Services | Azzam Hesham Al-Sarari",
+        description: "AI engineering services by Azzam Hesham Al-Sarari.",
     },
 };
 
@@ -108,7 +105,9 @@ export default function Services() {
                         </p>
                         <Interactive>
                             <a
-                                href="mailto:qq11gharipqq11@gmail.com"
+                                href="https://www.linkedin.com/in/azzam-alsarari-908b94346/?isSelfProfile=true"
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 className="inline-flex items-center gap-2 bg-tertiary-color hover:bg-tertiary-color/90 text-white px-8 py-4 rounded-full font-bold text-lg transition-all shadow-lg hover:shadow-tertiary-color/20"
                             >
                                 Get in Touch

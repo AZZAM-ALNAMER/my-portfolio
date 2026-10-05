@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Slide } from "../../animation/Slide";
@@ -11,8 +10,6 @@ type Props = {
   };
 };
 
-const fallbackImage: string = "/project.png";
-
 // Dynamic metadata for SEO
 // Dynamic metadata for SEO
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -22,22 +19,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!project) {
     return {
       title: "Project Not Found",
-      metadataBase: new URL("https://mohamedkhaledghareeb.com/projects"),
     };
   }
 
   return {
     title: `${project.name} | Project`,
-    metadataBase: new URL(
-      `https://mohamedkhaledghareeb.com/projects/${project.slug}`
-    ),
     description: project.impact,
     openGraph: {
-      images:
-        project.images && project.images.length > 0
-          ? project.images[0].src
-          : fallbackImage,
-      url: `https://mohamedkhaledghareeb.com/projects/${project.slug}`,
       title: project.name,
       description: project.impact,
     },
@@ -79,7 +67,6 @@ export default function Project({ params }: Props) {
 
           <ProjectGallery
             images={project.images}
-            video={project.video}
             projectName={project.name}
           />
 
@@ -127,7 +114,11 @@ export default function Project({ params }: Props) {
                       key={link.label}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-primary-color hover:underline font-medium transition-colors"
+                      className={`inline-flex items-center gap-2 rounded-md border border-primary-color px-5 py-3 font-medium transition-colors ${
+                        link.label === "Live Demo"
+                          ? "bg-primary-color text-white hover:bg-secondary-color"
+                          : "bg-white text-primary-color hover:border-secondary-color hover:text-secondary-color"
+                      }`}
                     >
                       {link.label} ↗
                     </a>

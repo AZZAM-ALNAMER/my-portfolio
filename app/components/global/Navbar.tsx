@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import Theme from "./Theme";
 import MobileMenu from "./MobileMenu";
 import { profileData } from "@/app/data/profile";
 
@@ -17,14 +16,6 @@ export default function Navbar() {
     {
       title: "Experience",
       href: "/#experience",
-    },
-    {
-      title: "Blog",
-      href: "/blog",
-    },
-    {
-      title: "Services",
-      href: "/services",
     },
     {
       title: "Contact",
@@ -62,7 +53,6 @@ export default function Navbar() {
         </nav>
 
         <div className="flex items-center gap-x-4">
-          <Theme />
           <MobileMenu />
         </div>
       </div>

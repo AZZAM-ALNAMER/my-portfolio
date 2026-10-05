@@ -11,14 +11,11 @@ import {
 } from "react-icons/hi";
 
 export const metadata: Metadata = {
-  title: "Blog | Mohamed Khaled Ghareeb",
-  metadataBase: new URL("https://mohamedkhaledghareeb.com/blog"),
-  description: "Deep dives into LLM fine-tuning, RAG design, and MLOps by Mohamed Khaled Ghareeb.",
+  title: "Blog | Azzam Hesham Al-Sarari",
+  description: "Notes on AI engineering, LLMs, and agentic systems by Azzam Hesham Al-Sarari.",
   openGraph: {
-    title: "Blog | Mohamed Khaled Ghareeb",
-    url: "https://mohamedkhaledghareeb.com/blog",
-    description: "Deep dives into LLM fine-tuning, RAG design, and MLOps by Mohamed Khaled Ghareeb.",
-    images: "/profile.jpg",
+    title: "Blog | Azzam Hesham Al-Sarari",
+    description: "Notes on AI engineering, LLMs, and agentic systems by Azzam Hesham Al-Sarari.",
   },
 };
 
@@ -110,8 +107,10 @@ export default function Blog() {
             If there&apos;s something specific you&apos;d like to see covered, let&apos;s connect.
           </p>
           <a
-            href="mailto:mohamed.khaled.ai01@gmail.com"
-            className="inline-flex items-center gap-x-2 bg-zinc-900 dark:bg-white dark:text-zinc-900 text-white px-8 py-4 rounded-xl font-bold hover:scale-[1.02] active:scale-[0.98] transition-all"
+            href="https://www.linkedin.com/in/azzam-alsarari-908b94346/?isSelfProfile=true"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-x-2 bg-primary-color hover:bg-secondary-color text-white px-8 py-4 rounded-xl font-bold hover:scale-[1.02] active:scale-[0.98] transition-all"
           >
             Send a Request
           </a>
@@ -120,4 +119,3 @@ export default function Blog() {
     </main>
   );
 }
-

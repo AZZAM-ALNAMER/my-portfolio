@@ -54,7 +54,7 @@ AI RESPONSE:`;
     } catch (error: any) {
         console.error("Chatbot Error:", error);
         return NextResponse.json(
-            { response: "I'm having trouble processing your request. Please try asking about Mohamed's skills, projects, or experience." },
+            { response: "I'm having trouble processing your request. Please try asking about Azzam's skills, projects, or experience." },
             { status: 200 }
         );
     }

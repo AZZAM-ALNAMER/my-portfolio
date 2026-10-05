@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import Social from "./components/shared/Social";
 import { Slide } from "./animation/Slide";
 import { profileData } from "./data/profile";
@@ -37,8 +38,11 @@ export default function Home() {
               {profileData.availability}
             </p>
             <h1 className="font-incognito font-semibold tracking-tight text-3xl sm:text-5xl mb-6 lg:leading-[3.7rem] leading-tight">
-              {profileData.headline}
+              {profileData.name}
             </h1>
+            <p className="text-xl font-semibold text-primary-color mb-5">
+              {profileData.headline}
+            </p>
             <p className="text-base dark:text-zinc-300 text-zinc-600 leading-relaxed">
               {profileData.summary}
             </p>
@@ -58,10 +62,11 @@ export default function Home() {
               <div className="flex flex-wrap items-center gap-6 text-sm">
                 <Interactive>
                   <a
-                    className="inline-flex items-center gap-x-2 bg-tertiary-color text-white px-6 py-3 rounded-md font-semibold tracking-wide hover:opacity-80 duration-200"
-                    href={`mailto:${profileData.email}`}
+                    className="inline-flex items-center gap-x-2 bg-primary-color text-white px-6 py-3 rounded-md font-semibold tracking-wide hover:bg-secondary-color duration-200"
+                    href={profileData.cvUrl}
+                    download
                   >
-                    Let&apos;s Build Together
+                    Download CV
                   </a>
                 </Interactive>
               </div>
@@ -104,9 +109,8 @@ export default function Home() {
               Experience
             </h2>
             <p className="text-zinc-600 dark:text-zinc-400 max-w-3xl mt-3 leading-relaxed">
-              From designing therapeutic chatbots to deploying HIPAA-ready
-              healthcare assistants, I build systems that balance intelligence,
-              compliance, and speed.
+              Building production-ready AI systems across LLMs, agentic
+              workflows, computer vision, and retrieval-augmented generation.
             </p>
           </div>
         </Slide>
@@ -203,7 +207,12 @@ export default function Home() {
 
                   <div className="relative z-10">
                     <h3 className="text-2xl font-bold mb-2 dark:text-zinc-100 text-zinc-800 transition-colors group-hover:dark:text-white">
-                      {project.name}
+                      <Link
+                        href={`/projects/${project.slug}`}
+                        className="hover:text-primary-color"
+                      >
+                        {project.name}
+                      </Link>
                     </h3>
                     <div className="flex items-center gap-2 mb-4">
                       <div className="h-px w-8 bg-tertiary-color/30" />
@@ -212,7 +221,7 @@ export default function Home() {
                       </p>
                     </div>
                     <p className="text-base text-zinc-600 dark:text-zinc-300 leading-relaxed mb-8">
-                      {project.focus}
+                      {project.description}
                     </p>
                   </div>
 

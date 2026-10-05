@@ -18,13 +18,13 @@ export default function GitHubActivity() {
 
                 <div className="dark:bg-zinc-900/40 bg-white/70 p-8 rounded-3xl border dark:border-zinc-800 border-zinc-200 backdrop-blur-md overflow-hidden flex justify-center items-center">
                     <GitHubCalendar
-                        username="ghreeb1"
+                        username="AZZAM-ALNAMER"
                         blockSize={13}
                         blockMargin={4}
                         fontSize={12}
                         theme={{
-                            light: ["#f4f4f5", "#dcfce7", "#86efac", "#22c55e", "#15803d"],
-                            dark: ["#18181b", "#064e3b", "#065f46", "#059669", "#10b981"],
+                            light: ["#F3F2EF", "#FFFFFF", "#0A66C2", "#0A66C2", "#004182"],
+                            dark: ["#F3F2EF", "#FFFFFF", "#0A66C2", "#0A66C2", "#004182"],
                         }}
                     />
                 </div>

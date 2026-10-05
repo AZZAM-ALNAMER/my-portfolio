@@ -7,15 +7,11 @@ import { profileData } from "../data/profile";
 import Interactive from "../components/shared/Interactive";
 
 export const metadata: Metadata = {
-  title: "Projects | Mohamed Khaled Ghareeb",
-  metadataBase: new URL("https://mohamedkhaledghareeb.com/projects"),
-  description: "Selected AI and machine learning projects built by Mohamed Khaled Ghareeb",
+  title: "Projects | Azzam Hesham Al-Sarari",
+  description: "Selected AI engineering projects by Azzam Hesham Al-Sarari.",
   openGraph: {
-    title: "Projects | Mohamed Khaled Ghareeb",
-    url: "https://mohamedkhaledghareeb.com/projects",
-    description:
-      "Selected AI and machine learning projects built by Mohamed Khaled Ghareeb",
-    images: "/profile.jpg",
+    title: "Projects | Azzam Hesham Al-Sarari",
+    description: "Selected AI engineering projects by Azzam Hesham Al-Sarari.",
   },
 };
 
@@ -63,7 +59,7 @@ export default function Project() {
                   </div>
 
                   <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed line-clamp-2">
-                    {project.focus}
+                    {project.description}
                   </p>
 
                   <div className="flex flex-wrap gap-2 mt-2">

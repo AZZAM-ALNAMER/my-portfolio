@@ -2,30 +2,21 @@ import Image from "next/image";
 import { Metadata } from "next";
 import { Slide } from "../animation/Slide";
 import { profileData } from "../data/profile";
-import { BiEnvelope, BiLogoDiscord, BiLogoGithub, BiLogoLinkedin, BiMap } from "react-icons/bi";
+import { BiLogoGithub, BiLogoLinkedin, BiMap } from "react-icons/bi";
 import { HiCalendar, HiExternalLink } from "react-icons/hi";
 import Interactive from "../components/shared/Interactive";
 import Social from "../components/shared/Social";
 
 export const metadata: Metadata = {
-    title: "Contact | Mohamed Khaled Ghareeb",
-    description: "Get in touch with Mohamed Khaled Ghareeb—AI & Machine Learning Engineer.",
+    title: "Contact | Azzam Hesham Al-Sarari",
+    description: "Connect with Azzam Hesham Al-Sarari, AI Engineer.",
 };
 
 export default function Contact() {
-    const contactLinks = [
-        {
-            label: "Email",
-            value: profileData.email,
-            icon: BiEnvelope,
-            href: `mailto:${profileData.email}`,
-            id: "email",
-        },
-        ...profileData.contactLinks.map((link) => ({
+    const contactLinks = profileData.contactLinks.map((link) => ({
             ...link,
-            icon: link.id === "linkedin" ? BiLogoLinkedin : link.id === "github" ? BiLogoGithub : BiLogoDiscord,
-        })),
-    ];
+            icon: link.id === "linkedin" ? BiLogoLinkedin : BiLogoGithub,
+        }));
 
     return (
         <main className="max-w-7xl mx-auto md:px-16 px-6 lg:mt-32 mt-20 space-y-24 min-h-screen">
@@ -39,22 +30,19 @@ export default function Contact() {
                             Let&apos;s Build Something Together
                         </h1>
                         <p className="text-base dark:text-zinc-300 text-zinc-600 leading-relaxed max-w-2xl">
-                            I&apos;m currently open to new opportunities and collaborations. Whether you have a question, a project idea, or just want to say hi, feel free to reach out!
+                            Connect with me on LinkedIn or GitHub to discuss AI engineering, projects, and collaboration.
                         </p>
                     </Slide>
 
                     <div className="grid grid-cols-1 gap-6 mt-12">
                         {contactLinks.map((link, index) => {
-                            const url = "url" in link ? link.url : link.href;
-                            const value = "value" in link ? link.value : link.label;
-
                             return (
                                 <Slide key={link.id} delay={0.1 * index}>
                                     <Interactive>
                                         <a
-                                            href={url}
-                                            target={"url" in link ? "_blank" : "_self"}
-                                            rel={"url" in link ? "noreferrer noopener" : ""}
+                                            href={link.url}
+                                            target="_blank"
+                                            rel="noreferrer noopener"
                                             className="group flex flex-wrap items-center justify-between gap-4 border dark:border-zinc-800 border-zinc-200 rounded-3xl p-6 dark:bg-zinc-900/40 bg-white/70 backdrop-blur-md transition-all duration-300 hover:border-tertiary-color/50 shadow-sm hover:shadow-xl dark:shadow-black/20"
                                         >
                                             <div className="flex items-center gap-5">
@@ -66,7 +54,7 @@ export default function Contact() {
                                                         {link.label}
                                                     </p>
                                                     <p className="text-lg font-semibold dark:text-zinc-100 text-zinc-800">
-                                                        {value}
+                                                        {link.label}
                                                     </p>
                                                 </div>
                                             </div>
@@ -84,8 +72,8 @@ export default function Contact() {
                         <div className="absolute inset-0 blur-[80px] bg-gradient-to-br from-tertiary-color/20 via-primary-color/10 to-transparent rounded-full opacity-50 group-hover:opacity-80 transition-opacity duration-500" />
                         <div className="relative animate-float bg-gradient-to-b from-zinc-100 to-white dark:from-zinc-800 dark:to-zinc-900 border dark:border-zinc-700 border-zinc-200 rounded-[32px] p-6 shadow-2xl overflow-hidden">
                             <Image
-                                src="/assets/contact-illustration.png"
-                                alt="Contact illustration"
+                                src={profileData.profileImage.src}
+                                alt={profileData.profileImage.alt}
                                 width={400}
                                 height={400}
                                 className="rounded-2xl object-cover hover:scale-105 transition-transform duration-500"
@@ -105,7 +93,7 @@ export default function Contact() {
                             <h2 className="text-xl font-bold font-incognito">Location</h2>
                         </div>
                         <p className="text-zinc-600 dark:text-zinc-400">
-                            Based in {profileData.location}, available for remote work and open to relocation.
+                            Based in {profileData.location}.
                         </p>
                     </div>
                 </Slide>
@@ -116,10 +104,10 @@ export default function Contact() {
                             <div className="p-3 rounded-xl bg-tertiary-color/10">
                                 <HiCalendar className="text-2xl text-tertiary-color" />
                             </div>
-                            <h2 className="text-xl font-bold font-incognito">Availability</h2>
+                            <h2 className="text-xl font-bold font-incognito">Focus</h2>
                         </div>
                         <p className="text-zinc-600 dark:text-zinc-400">
-                            {profileData.availability}
+                            {profileData.headline}
                         </p>
                     </div>
                 </Slide>

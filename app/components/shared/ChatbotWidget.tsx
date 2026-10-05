@@ -15,7 +15,7 @@ export default function ChatbotWidget() {
     const [messages, setMessages] = useState<Message[]>([
         {
             role: "assistant",
-            content: "Hi! I'm Mohamed's AI assistant. Ask me anything about his experience, skills, or projects!",
+            content: "Hi! I'm Azzam's AI assistant. Ask me about his AI engineering experience, skills, or projects!",
         },
     ]);
     const [input, setInput] = useState("");
@@ -67,7 +67,7 @@ export default function ChatbotWidget() {
                 ...prev,
                 {
                     role: "assistant",
-                    content: "Sorry, I encountered an error. Please try again or contact Mohamed directly via email.",
+                    content: "Sorry, I encountered an error. Please try again or connect with Azzam via LinkedIn.",
                 },
             ]);
         } finally {
@@ -108,7 +108,7 @@ export default function ChatbotWidget() {
                                 </div>
                                 <div>
                                     <h3 className="font-semibold text-sm">AI Assistant</h3>
-                                    <p className="text-xs text-zinc-500">Ask about Mohamed</p>
+                                    <p className="text-xs text-zinc-500">Ask about Azzam</p>
                                 </div>
                             </div>
                             <button

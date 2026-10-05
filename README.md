@@ -1,10 +1,10 @@
 <div align="center">
-<a href="https://mohamedkhaledghareeb.com"><img src="./public/logo.png" width="60px"></a>
+<a href="https://github.com/AZZAM-ALNAMER"><img src="./public/personal-image.jpeg" width="60px"></a>
 </div>
 
 <div align="center">
-<h1>Mohammed Khaled Portfolio</h1>
-<p>My personal portfolio website showcasing my AI & Machine Learning projects.</p>
+<h1>Azzam Hesham Al-Sarari — AI Engineer</h1>
+<p>Personal portfolio showcasing work across LLMs, agentic AI, and computer vision.</p>
 </div>
 
 # Tech Stack
@@ -14,32 +14,24 @@
 - [Sanity.io][sanity]: Headless CMS and Content Lake
 - [TailwindCSS][tailwind] / CSS - Styling and UI
 - [Umami][umami]: Analytics
-- [Next Themes][nexttheme]: Color Theme
 - [React Refractor][reactrefractor]: Syntax Highlighting
 
 ## Project Overview
 
-This portfolio highlights my work in AI, Machine Learning, Computer Vision, and RAG systems.
+This portfolio highlights AI engineering projects, experience, skills, and education. The CV and project gallery images are served locally from `public/`.
 
 ## Run Project Locally
 
 Follow this guide to get this site running locally:
 
-### Clone Repository
+### Install and Run
 
 ```bash
-git clone https://github.com/ghreeb1/your-repo-name.git
-cd your-repo-name
 npm install
+npm run dev
 ```
 
-- Rename `.env.example` to `.env.local`
-
-### Update Env Variables
-
-- Set `NEXT_PUBLIC_SANITY_PROJECT_ID`
-- Set `NEXT_PUBLIC_SANITY_DATASET`
-- Set `GEMINI_API_KEY` for the AI Chatbot
+The portfolio works without API credentials. Set `GEMINI_API_KEY` to enable Gemini-backed responses in the chatbot.
 
 ## Build
 
@@ -51,7 +43,7 @@ npm run build
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-Copyright (c) 2025 Mohammed Khaled.
+Portfolio content (c) Azzam Hesham Al-Sarari. The base project retains its MIT license; see [LICENSE](LICENSE).
 
 <!-- Link Refs -->
 
@@ -60,5 +52,4 @@ Copyright (c) 2025 Mohammed Khaled.
 [sanity]: https://sanity.io
 [tailwind]: https://tailwindcss.com
 [umami]: https://umami.is
-[nexttheme]: https://github.com/pacocoursey/next-themes
 [reactrefractor]: https://github.com/rexxars/react-refractor

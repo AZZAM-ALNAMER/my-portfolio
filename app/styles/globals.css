@@ -9,9 +9,8 @@ html {
 @import "prism.css";
 
 body {
-  background-image: url("/noise.png");
-  background-size: 200px 200px;
-  background-position: 0 0;
+  background-color: #ffffff;
+  color: #1b1f23;
 }
 
 h1,

@@ -4,14 +4,11 @@ import Image from "next/image";
 import { useState } from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
 import {
-  HiBeaker,
-  HiBookmarkAlt,
-  HiLightningBolt,
   HiOutlineX,
   HiUser,
   HiBriefcase,
   HiMail,
-  HiCollection,
+  HiBeaker,
 } from "react-icons/hi";
 import { profileData } from "@/app/data/profile";
 
@@ -32,16 +29,6 @@ export default function MobileMenu() {
       title: "Experience",
       href: "/#experience",
       icon: HiBriefcase,
-    },
-    {
-      title: "Blog",
-      href: "/blog",
-      icon: HiBookmarkAlt,
-    },
-    {
-      title: "Services",
-      href: "/services",
-      icon: HiLightningBolt,
     },
     {
       title: "Contact",

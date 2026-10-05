@@ -16,36 +16,23 @@ const inter = Inter({
 });
 
 const options = {
-  title: "Mohamed Khaled Ghareeb | AI & Machine Learning Engineer",
+  title: "Azzam Hesham Al-Sarari | AI Engineer",
   description:
-    "AI & Machine Learning Engineer specializing in Generative AI, NLP, and Computer Vision. Building production-ready LLM and RAG systems with measurable impact.",
-  url: "https://mohamedkhaledghareeb.com",
-  ogImage: "/profile.jpg",
+    "AI Engineer building intelligent systems across LLMs, agentic AI, and computer vision.",
 };
 
 export const metadata: Metadata = {
   title: options.title,
-  metadataBase: new URL(options.url),
   description: options.description,
   icons: {
-    icon: "/favicon.ico?v=5",
-    shortcut: "/favicon.png?v=5",
-    apple: "/favicon.png?v=5",
+    icon: "/favicon.svg",
   },
   openGraph: {
     title: options.title,
-    url: options.url,
-    siteName: "Mohamed Khaled Ghareeb",
+    siteName: "Azzam Hesham Al-Sarari",
     locale: "en-US",
     type: "website",
     description: options.description,
-    images: options.ogImage,
-  },
-  alternates: {
-    canonical: options.url,
-  },
-  other: {
-    "google-site-verification": "IzcWMgn5Qjf-LCtA337KTGjivsf9bmod_1pZ-jxYQh8",
   },
 };
 
