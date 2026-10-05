@@ -1,6 +1,7 @@
 import {
   BiLogoGithub,
   BiLogoLinkedinSquare,
+  BiEnvelope,
 } from "react-icons/bi";
 
 export const socialLinks = [
@@ -16,6 +17,13 @@ export const socialLinks = [
     name: "LinkedIn",
     url: "https://www.linkedin.com/in/azzam-alsarari-908b94346/?isSelfProfile=true",
     icon: BiLogoLinkedinSquare,
+    status: "social",
+  },
+  {
+    id: 3,
+    name: "Email",
+    url: "mailto:azamo77.alsarari@gmail.com",
+    icon: BiEnvelope,
     status: "social",
   },
 ];

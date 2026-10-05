@@ -2,7 +2,7 @@ import Image from "next/image";
 import { Metadata } from "next";
 import { Slide } from "../animation/Slide";
 import { profileData } from "../data/profile";
-import { BiLogoGithub, BiLogoLinkedin, BiMap } from "react-icons/bi";
+import { BiEnvelope, BiLogoGithub, BiLogoLinkedin, BiMap } from "react-icons/bi";
 import { HiCalendar, HiExternalLink } from "react-icons/hi";
 import Interactive from "../components/shared/Interactive";
 import Social from "../components/shared/Social";
@@ -15,7 +15,12 @@ export const metadata: Metadata = {
 export default function Contact() {
     const contactLinks = profileData.contactLinks.map((link) => ({
             ...link,
-            icon: link.id === "linkedin" ? BiLogoLinkedin : BiLogoGithub,
+            icon:
+                link.id === "linkedin"
+                    ? BiLogoLinkedin
+                    : link.id === "github"
+                      ? BiLogoGithub
+                      : BiEnvelope,
         }));
 
     return (
@@ -30,7 +35,7 @@ export default function Contact() {
                             Let&apos;s Build Something Together
                         </h1>
                         <p className="text-base dark:text-zinc-300 text-zinc-600 leading-relaxed max-w-2xl">
-                            Connect with me on LinkedIn or GitHub to discuss AI engineering, projects, and collaboration.
+                            Reach me by email or connect on LinkedIn and GitHub to discuss AI engineering, projects, and collaboration.
                         </p>
                     </Slide>
 

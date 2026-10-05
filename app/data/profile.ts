@@ -4,7 +4,7 @@ export const profileData = {
   headline: "Building intelligent systems — LLMs · Agentic AI · Computer Vision",
   summary:
     "AI Engineer with hands-on experience building production-ready systems across the full AI stack — from LLM fine-tuning and agentic pipeline design to computer vision and RAG architecture. Delivered multiple end-to-end projects spanning multi-agent orchestration, semantic search, and generative AI integration. Strong foundation in mathematics, system design, and applying AI to real-world optimization problems. I speak Arabic (native), English (fluent), and Turkish (conversational).",
-  email: "",
+  email: "azamo77.alsarari@gmail.com",
   location: "Ankara, Turkey",
   availability: "AI Engineer · Ankara, Turkey",
   preferredRoles: ["LLMs", "Agentic AI", "Computer Vision"],
@@ -22,6 +22,11 @@ export const profileData = {
       id: "github",
       label: "GitHub",
       url: "http://github.com/AZZAM-ALNAMER",
+    },
+    {
+      id: "email",
+      label: "azamo77.alsarari@gmail.com",
+      url: "mailto:azamo77.alsarari@gmail.com",
     },
   ],
   cvUrl: "/azzam-hesham-al-sarari-cv.pdf",
@@ -246,10 +251,10 @@ export const profileData = {
     },
   ],
   education: {
-    degree: "Software Engineering",
+    degree: "Bachelor's Degree in Software Engineering",
     institution: "OSTIM Technical University",
     specialization: "Ankara, Turkey · GPA: 3.50 / 4.00",
-    graduation: "September 2022 – June 2026",
+    graduation: "Graduated",
   },
   languages: [
     { name: "Arabic", level: "Native" },
@@ -257,8 +262,9 @@ export const profileData = {
     { name: "Turkish", level: "Conversational" },
   ],
   preferences: [
-    "Based in Ankara, Turkey.",
-    "Focused on building practical AI systems across the full AI stack.",
+    "Open to Remote Roles",
+    "Open to Relocation",
+    "AI Research & Open Source Contributor",
   ],
   services: [
     {

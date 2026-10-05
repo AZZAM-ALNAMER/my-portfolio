@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Metadata } from "next";
-import { BiLogoGithub, BiLogoLinkedin, BiMap } from "react-icons/bi";
+import { BiEnvelope, BiLogoGithub, BiLogoLinkedin, BiMap } from "react-icons/bi";
 import { Slide } from "../animation/Slide";
 import Social from "../components/shared/Social";
 import { profileData } from "../data/profile";
@@ -16,8 +16,6 @@ import {
   HiBriefcase,
   HiCalendar,
   HiTerminal,
-  HiAcademicCap,
-  HiBadgeCheck,
 } from "react-icons/hi";
 import GitHubActivity from "../components/shared/GitHubActivity";
 
@@ -37,6 +35,12 @@ const story = [
 ];
 
 const keyFacts = [
+  {
+    label: "Email",
+    value: profileData.email,
+    icon: BiEnvelope,
+    href: `mailto:${profileData.email}`,
+  },
   {
     label: "LinkedIn",
     value: "Connect on LinkedIn",
@@ -408,62 +412,6 @@ export default function About() {
                   </p>
                 </article>
               </Interactive>
-            ))}
-          </div>
-        </Slide>
-      </section>
-
-      <section id="certifications" className="space-y-10">
-        <Slide>
-          <div>
-            <p className="uppercase text-sm tracking-[0.3em] text-zinc-500 mb-3">
-              Technical Credentials
-            </p>
-            <h2 className="font-incognito text-4xl font-semibold tracking-tight">
-              Certifications
-            </h2>
-          </div>
-        </Slide>
-        <Slide delay={0.05}>
-          <div className="grid lg:grid-cols-2 grid-cols-1 gap-6">
-            {profileData.certifications.map((cert: any, index: number) => (
-              <Slide key={cert.name} delay={0.1 * index}>
-                <Interactive>
-                  <article className="group relative overflow-hidden rounded-3xl border dark:border-zinc-800 border-zinc-200 p-8 h-full dark:bg-zinc-900/40 bg-white/70 backdrop-blur-md transition-all duration-300 hover:border-tertiary-color/50 shadow-sm hover:shadow-xl dark:shadow-black/20">
-                    <div className="absolute inset-0 bg-gradient-to-br from-tertiary-color/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
-                    <div className="relative z-10 flex flex-wrap items-center justify-between gap-4 mb-6">
-                      <div className="flex items-center gap-4">
-                        <div className="p-3 rounded-2xl bg-zinc-100 dark:bg-zinc-800 group-hover:bg-tertiary-color/10 group-hover:scale-110 transition-all duration-300">
-                          <HiBadgeCheck className="text-2xl text-tertiary-color" />
-                        </div>
-                        <h3 className="text-xl font-bold dark:text-zinc-100 text-zinc-800 transition-colors group-hover:dark:text-white">
-                          {cert.name}
-                        </h3>
-                      </div>
-                      <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-zinc-100/50 dark:bg-zinc-800/50 border dark:border-zinc-700 border-zinc-200">
-                        <span className="text-[10px] font-bold uppercase tracking-widest text-zinc-500 dark:text-zinc-400">
-                          {cert.year}
-                        </span>
-                      </div>
-                    </div>
-
-                    <div className="relative z-10 mb-6">
-                      <p className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-tertiary-color/10 text-tertiary-color text-xs font-bold uppercase tracking-widest mb-4">
-                        {cert.issuer}
-                      </p>
-                      <p className="text-base text-zinc-600 dark:text-zinc-300 leading-relaxed font-medium">
-                        {cert.detail}
-                      </p>
-                    </div>
-
-                    {/* Aesthetic Background Decoration */}
-                    <div className="absolute -bottom-10 -right-10 opacity-[0.03] group-hover:opacity-[0.08] transition-opacity duration-500 pointer-events-none">
-                      <HiAcademicCap className="text-[180px]" />
-                    </div>
-                  </article>
-                </Interactive>
-              </Slide>
             ))}
           </div>
         </Slide>
