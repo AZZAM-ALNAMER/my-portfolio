@@ -5,6 +5,7 @@ import { profileData } from "@/app/data/profile";
 import ProjectGallery from "@/app/components/shared/ProjectGallery";
 import FineTuningShowcase from "@/app/components/shared/FineTuningShowcase";
 import Link from "next/link";
+import HousePriceShowcase from "@/app/components/shared/HousePriceShowcase";
 
 type Props = {
   params: {
@@ -67,7 +68,9 @@ export default function Project({ params }: Props) {
             {project.impact}
           </p>
 
-          {slug === "llm-finetuning-vm-allocation" ? (
+          {slug === "house-price-prediction-ml-pipeline" ? (
+            <HousePriceShowcase />
+          ) : slug === "llm-finetuning-vm-allocation" ? (
             <FineTuningShowcase />
           ) : (
             <ProjectGallery images={project.images} projectName={project.name} />
@@ -131,7 +134,7 @@ export default function Project({ params }: Props) {
             )}
           </div>
           <nav className="mt-12 flex items-center justify-between border-t border-zinc-200 pt-6 text-sm dark:border-zinc-800" aria-label="Project navigation">
-            <Link href="/projects/matchi-ai-job-matcher" className="text-zinc-600 transition-colors hover:text-primary-color">← Previous Project: Matchi — AI Job Matcher</Link>
+            <Link href={slug === "house-price-prediction-ml-pipeline" ? "/projects/llm-finetuning-vm-allocation" : "/projects/matchi-ai-job-matcher"} className="text-zinc-600 transition-colors hover:text-primary-color">{slug === "house-price-prediction-ml-pipeline" ? "← Previous Project: LLM Fine-Tuning for VM Allocation" : "← Previous Project: Matchi — AI Job Matcher"}</Link>
             <Link href="/projects" className="text-zinc-600 transition-colors hover:text-primary-color">More projects →</Link>
           </nav>
         </div>
