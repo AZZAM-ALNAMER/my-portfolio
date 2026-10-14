@@ -5,6 +5,7 @@ import { Slide } from "../animation/Slide";
 import PageHeading from "../components/shared/PageHeading";
 import { profileData } from "../data/profile";
 import Interactive from "../components/shared/Interactive";
+import FineTuningWorkflow from "../components/shared/FineTuningWorkflow";
 
 export const metadata: Metadata = {
   title: "Projects | Azzam Hesham Al-Sarari",
@@ -32,7 +33,9 @@ export default function Project() {
                 className="flex flex-col gap-4 dark:bg-zinc-900/30 bg-zinc-50 border dark:border-zinc-800 border-zinc-200 p-6 rounded-2xl hover:border-tertiary-color dark:hover:border-primary-color transition-colors duration-300 group h-full"
               >
                 <div className="relative w-full aspect-video rounded-xl overflow-hidden bg-zinc-100 dark:bg-zinc-800 border dark:border-zinc-700 border-zinc-200">
-                  <Image
+                  {project.slug === "llm-finetuning-vm-allocation" ? (
+                    <FineTuningWorkflow compact />
+                  ) : <Image
                     src={
                       project.images && project.images.length > 0
                         ? project.images[0].src
@@ -41,7 +44,7 @@ export default function Project() {
                     fill
                     alt={project.name}
                     className="object-cover group-hover:scale-105 duration-500"
-                  />
+                  />}
                 </div>
 
                 <div className="flex flex-col gap-3">

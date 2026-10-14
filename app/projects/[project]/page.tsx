@@ -3,6 +3,8 @@ import { notFound } from "next/navigation";
 import { Slide } from "../../animation/Slide";
 import { profileData } from "@/app/data/profile";
 import ProjectGallery from "@/app/components/shared/ProjectGallery";
+import FineTuningShowcase from "@/app/components/shared/FineTuningShowcase";
+import Link from "next/link";
 
 type Props = {
   params: {
@@ -65,10 +67,11 @@ export default function Project({ params }: Props) {
             {project.impact}
           </p>
 
-          <ProjectGallery
-            images={project.images}
-            projectName={project.name}
-          />
+          {slug === "llm-finetuning-vm-allocation" ? (
+            <FineTuningShowcase />
+          ) : (
+            <ProjectGallery images={project.images} projectName={project.name} />
+          )}
 
           <div className="mt-8 dark:text-zinc-300 text-zinc-600 leading-relaxed space-y-8">
             <p className="leading-7">{project.focus}</p>
@@ -127,6 +130,10 @@ export default function Project({ params }: Props) {
               </div>
             )}
           </div>
+          <nav className="mt-12 flex items-center justify-between border-t border-zinc-200 pt-6 text-sm dark:border-zinc-800" aria-label="Project navigation">
+            <Link href="/projects/matchi-ai-job-matcher" className="text-zinc-600 transition-colors hover:text-primary-color">← Previous Project: Matchi — AI Job Matcher</Link>
+            <Link href="/projects" className="text-zinc-600 transition-colors hover:text-primary-color">More projects →</Link>
+          </nav>
         </div>
       </Slide>
     </main>
