@@ -4,7 +4,6 @@ import { Metadata } from "next";
 import { Slide } from "../animation/Slide";
 import PageHeading from "../components/shared/PageHeading";
 import { profileData } from "../data/profile";
-import Interactive from "../components/shared/Interactive";
 import FineTuningWorkflow from "../components/shared/FineTuningWorkflow";
 import { HousePriceWorkflow } from "../components/shared/HousePriceShowcase";
 
@@ -25,14 +24,14 @@ export default function Project() {
         description="A selection of AI and ML systems I’ve built—focused on performance, reliability, and production deployment."
       />
 
-      <Slide delay={0.1}>
+      <Slide>
         <section className="grid xl:grid-cols-2 grid-cols-1 gap-8 mb-12">
           {profileData.projects.map((project) => (
-            <Interactive key={project.slug}>
-              <Link
-                href={`/projects/${project.slug}`}
-                className="flex flex-col gap-4 dark:bg-zinc-900/30 bg-zinc-50 border dark:border-zinc-800 border-zinc-200 p-6 rounded-2xl hover:border-tertiary-color dark:hover:border-primary-color transition-colors duration-300 group h-full"
-              >
+            <Link
+              key={project.slug}
+              href={`/projects/${project.slug}`}
+              className="flex flex-col gap-4 dark:bg-zinc-900/30 bg-zinc-50 border dark:border-zinc-800 border-zinc-200 p-6 rounded-2xl hover:border-tertiary-color dark:hover:border-primary-color transition-colors duration-300 group h-full"
+            >
                 <div className="relative w-full aspect-video rounded-xl overflow-hidden bg-zinc-100 dark:bg-zinc-800 border dark:border-zinc-700 border-zinc-200">
                   {project.slug === "house-price-prediction-ml-pipeline" ? (
                     <HousePriceWorkflow compact />
@@ -84,8 +83,7 @@ export default function Project() {
                     )}
                   </div>
                 </div>
-              </Link>
-            </Interactive>
+            </Link>
           ))}
         </section>
       </Slide>

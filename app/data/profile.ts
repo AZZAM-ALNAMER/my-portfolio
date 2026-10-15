@@ -1,7 +1,7 @@
 export const profileData = {
   name: "Azzam Hesham Al-Sarari",
   title: "AI Engineer",
-  headline: "Building intelligent systems — LLMs · Agentic AI · Computer Vision",
+  headline: "Building intelligent systems — LLMs · Agentic AI · Backend · FastAPI",
   summary:
     "AI Engineer with hands-on experience building production-ready systems across the full AI stack — from LLM fine-tuning and agentic pipeline design to computer vision and RAG architecture. Delivered multiple end-to-end projects spanning multi-agent orchestration, semantic search, and generative AI integration. Strong foundation in mathematics, system design, and applying AI to real-world optimization problems. I speak Arabic (native), English (fluent), and Turkish (conversational).",
   email: "azamo77.alsarari@gmail.com",

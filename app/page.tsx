@@ -29,7 +29,7 @@ const iconMap: { [key: string]: any } = {
 export default function Home() {
   return (
     <main className="max-w-7xl mx-auto md:px-16 px-6 lg:mt-32 mt-20 space-y-24">
-      <section className="flex xl:flex-row flex-col xl:items-center items-start xl:justify-center justify-between gap-12">
+      <section id="home" className="scroll-mt-24 flex xl:flex-row flex-col xl:items-center items-start xl:justify-center justify-between gap-12">
         <div className="lg:max-w-2xl max-w-full">
           <Slide>
             <p className="uppercase tracking-[0.3em] text-sm text-zinc-500 mb-4">
@@ -44,16 +44,6 @@ export default function Home() {
             <p className="text-base dark:text-zinc-300 text-zinc-600 leading-relaxed">
               {profileData.summary}
             </p>
-            <div className="flex flex-wrap gap-3 mt-6">
-              {profileData.preferredRoles.map((role) => (
-                <span
-                  key={role}
-                  className="text-xs uppercase tracking-[0.25em] dark:bg-primary-bg bg-zinc-100 border dark:border-zinc-800 border-zinc-200 rounded-full px-4 py-2 text-zinc-600 dark:text-zinc-300"
-                >
-                  {role}
-                </span>
-              ))}
-            </div>
           </Slide>
           <Slide delay={0.12}>
             <div className="mt-10">
@@ -64,13 +54,13 @@ export default function Home() {
         <Slide delay={0.1}>
           <div className="relative">
             <div className="absolute inset-0 blur-[90px] bg-gradient-to-br from-tertiary-color/30 via-primary-color/20 to-zinc-300 dark:to-zinc-700 rounded-full" />
-            <div className="relative animate-float bg-gradient-to-b from-zinc-100 to-white dark:from-zinc-800 dark:to-zinc-900 border dark:border-zinc-700 border-zinc-200 rounded-full p-4 shadow-2xl max-w-sm">
+            <div className="relative animate-float bg-gradient-to-b from-zinc-100 to-white dark:from-zinc-800 dark:to-zinc-900 border dark:border-zinc-700 border-zinc-200 rounded-full p-4 shadow-2xl max-w-none">
               <Image
                 src={profileData.profileImage.src}
                 alt={profileData.profileImage.alt}
-                width={320}
-                height={320}
-                className="h-72 w-72 rounded-full object-cover object-[center_30%] border-4 border-zinc-100 dark:border-zinc-800 shadow-lg"
+                width={400}
+                height={400}
+                className="h-80 w-80 rounded-full object-cover object-[center_28%] border-4 border-zinc-100 dark:border-zinc-800 shadow-lg"
                 priority
               />
             </div>
@@ -180,9 +170,9 @@ export default function Home() {
           </div>
         </Slide>
         <div className="grid lg:grid-cols-2 grid-cols-1 gap-6">
-          {profileData.projects.map((project: any, index: number) => (
-            <Slide key={project.name} delay={0.1 * index}>
-              <Interactive>
+          {profileData.projects.map((project: any) => (
+            <Slide key={project.name}>
+              <Link href={`/projects/${project.slug}`} className="block h-full">
                 <article className="group relative overflow-hidden rounded-3xl border dark:border-zinc-800 border-zinc-200 p-8 h-full dark:bg-zinc-900/40 bg-white/70 backdrop-blur-md transition-all duration-300 hover:border-tertiary-color/50 shadow-sm hover:shadow-xl dark:shadow-black/20">
                   <div className="absolute inset-0 bg-gradient-to-br from-tertiary-color/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
@@ -194,12 +184,9 @@ export default function Home() {
 
                   <div className="relative z-10">
                     <h3 className="text-2xl font-bold mb-2 dark:text-zinc-100 text-zinc-800 transition-colors group-hover:dark:text-white">
-                      <Link
-                        href={`/projects/${project.slug}`}
-                        className="hover:text-primary-color"
-                      >
+                      <span className="transition-colors group-hover:text-primary-color">
                         {project.name}
-                      </Link>
+                      </span>
                     </h3>
                     <div className="flex items-center gap-2 mb-4">
                       <div className="h-px w-8 bg-tertiary-color/30" />
@@ -233,7 +220,7 @@ export default function Home() {
                     <HiTerminal className="text-[180px]" />
                   </div>
                 </article>
-              </Interactive>
+              </Link>
             </Slide>
           ))}
         </div>

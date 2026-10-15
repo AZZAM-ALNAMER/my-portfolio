@@ -7,8 +7,12 @@ import { profileData } from "@/app/data/profile";
 export default function Navbar() {
   const data = [
     {
-      title: "About",
-      href: "/about",
+      title: "Home",
+      href: "/#home",
+    },
+    {
+      title: "Skills",
+      href: "/#skills",
     },
     {
       title: "Projects",
@@ -27,7 +31,7 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 mb-10 border-b border-zinc-200 bg-white px-6 py-4 text-sm md:mb-28 md:px-10">
       <div className="mx-auto grid max-w-7xl grid-cols-[1fr_auto] items-center gap-4 md:grid-cols-[1fr_auto_1fr]">
-        <Link href="/" className="flex min-w-0 items-center gap-3">
+        <Link href="/#home" className="flex min-w-0 items-center gap-3">
           <Image
             src={profileData.profileImage.src}
             width={52}

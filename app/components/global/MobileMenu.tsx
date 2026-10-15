@@ -5,7 +5,8 @@ import { useState } from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
 import {
   HiOutlineX,
-  HiUser,
+  HiHome,
+  HiCode,
   HiBriefcase,
   HiMail,
   HiBeaker,
@@ -16,9 +17,14 @@ export default function MobileMenu() {
   const [navShow, setNavShow] = useState(false);
   const data = [
     {
-      title: "About",
-      href: "/about",
-      icon: HiUser,
+      title: "Home",
+      href: "/#home",
+      icon: HiHome,
+    },
+    {
+      title: "Skills",
+      href: "/#skills",
+      icon: HiCode,
     },
     {
       title: "Projects",
@@ -62,7 +68,7 @@ export default function MobileMenu() {
           }`}
       >
         <div className="flex items-center justify-between mt-6 px-8">
-          <Link href="/" onClick={onToggleNav}>
+          <Link href="/#home" onClick={onToggleNav}>
             <Image
               src={profileData.profileImage.src}
               width={40}

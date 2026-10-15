@@ -35,7 +35,7 @@ export default function Contact() {
                             Let&apos;s Build Something Together
                         </h1>
                         <p className="text-base dark:text-zinc-300 text-zinc-600 leading-relaxed max-w-2xl">
-                            Reach me by email or connect on LinkedIn and GitHub to discuss AI engineering, projects, and collaboration.
+                            I’m a fresh AI Engineer based in Ankara, passionate about building real systems — not just prototypes. Whether it’s an internship, a full-time role, or a project collaboration, feel free to reach out.
                         </p>
                     </Slide>
 
