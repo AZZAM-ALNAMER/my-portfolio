@@ -4,7 +4,7 @@
 
 <div align="center">
 <h1>Azzam Hesham Al-Sarari — AI Engineer</h1>
-<p>Personal portfolio showcasing work across LLMs, agentic AI, and computer vision.</p>
+<p>Personal portfolio showcasing work across LLMs, agentic AI, and Backend.fastapi</p>
 </div>
 
 # Tech Stack
