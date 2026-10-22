@@ -6,6 +6,7 @@ import ProjectGallery from "@/app/components/shared/ProjectGallery";
 import FineTuningShowcase from "@/app/components/shared/FineTuningShowcase";
 import Link from "next/link";
 import HousePriceShowcase from "@/app/components/shared/HousePriceShowcase";
+import FlyrankShowcase from "@/app/components/shared/FlyrankShowcase";
 
 type Props = {
   params: {
@@ -44,6 +45,10 @@ export default function Project({ params }: Props) {
     return null;
   }
 
+  const projectIndex = profileData.projects.findIndex((item) => item.slug === slug);
+  const previousProject = profileData.projects[projectIndex - 1];
+  const nextProject = profileData.projects[projectIndex + 1];
+
   return (
     <main className="max-w-6xl mx-auto lg:px-16 px-8">
       <Slide>
@@ -53,11 +58,6 @@ export default function Project({ params }: Props) {
               {project.name}
             </h1>
             <div className="flex flex-col items-start md:items-end w-full md:w-auto">
-              {project.role && (
-                <span className="font-bold text-zinc-700 dark:text-zinc-300">
-                  {project.role}
-                </span>
-              )}
               {project.period && (
                 <span className="text-zinc-500 text-sm">{project.period}</span>
               )}
@@ -68,7 +68,14 @@ export default function Project({ params }: Props) {
             {project.impact}
           </p>
 
-          {slug === "house-price-prediction-ml-pipeline" ? (
+          {slug === "usage-metering-billing-engine" ? (
+            <>
+              <FlyrankShowcase />
+              <div className="mt-8">
+                <ProjectGallery images={project.images} projectName={project.name} contain />
+              </div>
+            </>
+          ) : slug === "house-price-prediction-ml-pipeline" ? (
             <HousePriceShowcase />
           ) : slug === "llm-finetuning-vm-allocation" ? (
             <FineTuningShowcase />
@@ -89,6 +96,13 @@ export default function Project({ params }: Props) {
                     <li key={i}>{item}</li>
                   ))}
                 </ul>
+              </div>
+            )}
+
+            {"limitations" in project && project.limitations && (
+              <div className="rounded-xl border border-zinc-200 bg-[#F3F2EF]/60 p-5 dark:border-zinc-800 dark:bg-zinc-900/40">
+                <h2 className="mb-2 text-lg font-semibold text-zinc-800 dark:text-zinc-200">Known Limitations &amp; Planned Improvements</h2>
+                <p className="leading-7">{project.limitations}</p>
               </div>
             )}
 
@@ -133,9 +147,9 @@ export default function Project({ params }: Props) {
               </div>
             )}
           </div>
-          <nav className="mt-12 flex items-center justify-between border-t border-zinc-200 pt-6 text-sm dark:border-zinc-800" aria-label="Project navigation">
-            <Link href={slug === "house-price-prediction-ml-pipeline" ? "/projects/llm-finetuning-vm-allocation" : "/projects/matchi-ai-job-matcher"} className="text-zinc-600 transition-colors hover:text-primary-color">{slug === "house-price-prediction-ml-pipeline" ? "← Previous Project: LLM Fine-Tuning for VM Allocation" : "← Previous Project: Matchi — AI Job Matcher"}</Link>
-            <Link href="/projects" className="text-zinc-600 transition-colors hover:text-primary-color">More projects →</Link>
+          <nav className="mt-12 flex items-center justify-between gap-4 border-t border-zinc-200 pt-6 text-sm dark:border-zinc-800" aria-label="Project navigation">
+            {previousProject ? <Link href={"/projects/" + previousProject.slug} className="text-zinc-600 transition-colors hover:text-primary-color">← Previous Project: {previousProject.name}</Link> : <span />}
+            {nextProject ? <Link href={"/projects/" + nextProject.slug} className="text-right text-zinc-600 transition-colors hover:text-primary-color">Next Project: {nextProject.name} →</Link> : <Link href="/projects" className="text-right text-zinc-600 transition-colors hover:text-primary-color">More projects coming soon →</Link>}
           </nav>
         </div>
       </Slide>

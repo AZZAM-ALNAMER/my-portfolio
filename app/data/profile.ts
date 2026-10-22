@@ -111,11 +111,13 @@ export const profileData = {
     {
       role: "AI Engineer Intern",
       company: "flyrank.ai",
-      period: "July 2026 – Present",
+      period: "JULY 2026 – OCT 2026",
       details: [
-        "Working on AI-powered systems and LLM integrations in a fast-paced startup environment.",
+        "AI Metering & Billing Engine: Built a tenant-aware usage metering and billing system using FastAPI, PostgreSQL, micro-USD integer math, and secure Stripe webhooks.",
+        "Async Pipelines & Auth: Implemented asynchronous background task queues via Inngest, automated PDF generation, and secure OAuth2 authentication middleware.",
+        "DevOps & Infrastructure: Containerized Python backend microservices using Docker, integrated third-party LLM APIs, and built rate-conscious web scrapers.",
       ],
-      stack: ["AI Engineering", "LLM Integrations"],
+      stack: ["AI Engineering", "LLM Integrations", "FastAPI", "PostgreSQL", "Docker", "Stripe Webhooks"],
     },
     {
       role: "AI Engineer & Researcher",
@@ -132,8 +134,33 @@ export const profileData = {
   ],
   projects: [
     {
+      slug: "usage-metering-billing-engine",
+      name: "Usage Metering & Billing Engine",
+      role: "Internship Capstone · flyrank.ai",
+      period: "2026",
+      focus: "A backend service built during my flyrank.ai internship that answers three questions: how much has a tenant used, what does it cost, and have they hit their limit? It meters usage idempotently, enforces Free and Pro plan quotas, prices AI tokens with real-world rules in integer micro-USD to avoid floating-point errors, and syncs subscriptions with Stripe (test mode) through verified, deduplicated webhooks. The code is layered as HTTP, services, and repositories.",
+      description: "Backend service that meters tenant usage idempotently, enforces plan quotas, prices AI tokens in integer micro-USD, and syncs plans with Stripe through signature-verified webhooks.",
+      impact: "Idempotent metering · Plan quotas · Stripe webhooks",
+      achievements: [
+        "Designed idempotent usage metering with a unique key, so retries return the original event instead of double-counting.",
+        "Enforced plan quotas with a clear boundary rule, returning 429 at the limit and 402 for usage types a plan does not include.",
+        "Implemented fresh, cached, output, and reasoning token pricing in integer micro-USD, with tests for pricing logic.",
+        "Integrated Stripe test-mode checkout with signature-verified webhooks and event-ID deduplication; forged requests are rejected with 400 and replays are ignored.",
+        "Structured the service into HTTP, service, and repository layers with tenant isolation by tenant_id.",
+      ],
+      limitations: "SQLite with startup schema creation, no authentication layer, no background jobs or invoicing, and a non-atomic quota check. Planned improvements include migrations, authentication, and atomic quota enforcement.",
+      stack: ["Python", "FastAPI", "SQLite", "Stripe (test mode)", "REST APIs", "Webhooks", "Idempotency", "Uvicorn"],
+      links: [{ label: "GitHub", url: "https://github.com/AZZAM-ALNAMER/flyrank-capstone-metering-billing" }],
+      images: [
+        { label: "Usage Rollup and Cost Breakdown", src: "/flyrank/usage-rollup-cost.png" },
+        { label: "Idempotent Usage Event — Duplicate Retry", src: "/flyrank/idempotent-usage-event.png" },
+        { label: "Stripe CLI Webhook Resend", src: "/flyrank/stripe-cli-resend.png" },
+        { label: "Invalid Webhook Signature Rejected with 400", src: "/flyrank/webhook-signature-rejection.png" },
+      ],
+    },
+    {
       slug: "virtual-dressing-system-vds-v2",
-      name: "Virtual Dressing System (VDS V2)",
+      name: "Virtual Dressing System (VDS)",
       role: "Professional Project · BLC İletişim",
       period: "2026 · 3 months",
       focus:
@@ -172,7 +199,7 @@ export const profileData = {
         },
       ],
       images: [
-        { label: "How It Works", src: "/projects/vds-1.png" },
+        { label: "Virtual Dressing System Landing Page", src: "/projects/vds-card.png" },
         { label: "Body Measurement Feature", src: "/projects/vds-2.png" },
         { label: "Skin Tone Feature", src: "/projects/vds-3.png" },
         { label: "Recommendation Engine", src: "/projects/vds-4.png" },
@@ -271,12 +298,19 @@ export const profileData = {
       links: [{ label: "GitHub", url: "https://github.com/AZZAM-ALNAMER/end-to-end-house-price-ml" }],
       images: [],
     },
+
   ],
   achievements: [
     "Built end-to-end AI projects across agentic systems, semantic search, and generative AI.",
     "Applied LLM-based mathematical reasoning to real-world VM and resource allocation problems.",
   ],
   certifications: [
+    {
+      name: "Backend AI Engineering",
+      issuer: "FlyRank",
+      year: "October 2026",
+      detail: "Backend AI Engineering certificate earned during the FlyRank internship.",
+    },
     {
       name: "Introduction to LLMs in Python",
       issuer: "DataCamp",

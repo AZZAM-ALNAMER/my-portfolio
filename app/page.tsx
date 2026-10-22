@@ -3,6 +3,7 @@ import Link from "next/link";
 import Social from "./components/shared/Social";
 import { Slide } from "./animation/Slide";
 import { profileData } from "./data/profile";
+import { orderProjectsForCards } from "./utils/projectCardOrder";
 import Interactive from "./components/shared/Interactive";
 import {
   HiCode,
@@ -170,7 +171,7 @@ export default function Home() {
           </div>
         </Slide>
         <div className="grid lg:grid-cols-2 grid-cols-1 gap-6">
-          {profileData.projects.map((project: any) => (
+          {orderProjectsForCards(profileData.projects).map((project: any) => (
             <Slide key={project.name}>
               <Link href={`/projects/${project.slug}`} className="block h-full">
                 <article className="group relative overflow-hidden rounded-3xl border dark:border-zinc-800 border-zinc-200 p-8 h-full dark:bg-zinc-900/40 bg-white/70 backdrop-blur-md transition-all duration-300 hover:border-tertiary-color/50 shadow-sm hover:shadow-xl dark:shadow-black/20">

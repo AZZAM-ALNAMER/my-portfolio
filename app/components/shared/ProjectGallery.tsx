@@ -9,12 +9,14 @@ interface ProjectGalleryProps {
     images: { src: string; label: string }[];
     video?: string;
     projectName: string;
+    contain?: boolean;
 }
 
 export default function ProjectGallery({
     images,
     video,
     projectName,
+    contain = false,
 }: ProjectGalleryProps) {
     const [currentIndex, setCurrentIndex] = useState<number | null>(null);
 
@@ -61,7 +63,7 @@ export default function ProjectGallery({
         <div className="space-y-12">
             {/* Featured Section */}
             <section>
-                <div className="relative w-full h-auto aspect-video mb-8 overflow-hidden rounded-xl border dark:border-zinc-800 border-zinc-200 shadow-sm cursor-pointer group">
+                <div className={`relative w-full ${contain ? "aspect-[3/1] bg-zinc-100 dark:bg-zinc-900" : "h-auto aspect-video"} mb-8 overflow-hidden rounded-xl border dark:border-zinc-800 border-zinc-200 shadow-sm cursor-pointer group`}>
                     {video ? (
                         <video
                             src={video}
@@ -80,7 +82,7 @@ export default function ProjectGallery({
                                 src={images[0].src}
                                 alt={projectName}
                                 fill
-                                className="object-cover transition-transform duration-700 group-hover:scale-105"
+                                className={`${contain ? "object-contain" : "object-cover transition-transform duration-700 group-hover:scale-105"}`}
                                 quality={100}
                                 priority
                                 unoptimized
@@ -120,12 +122,12 @@ export default function ProjectGallery({
                                     className="space-y-4 cursor-pointer group"
                                     onClick={() => openFullscreen(idx)}
                                 >
-                                    <div className="relative h-56 w-full overflow-hidden rounded-2xl border dark:border-zinc-800 border-zinc-100 shadow-sm">
+                                    <div className={`relative ${contain ? "aspect-[3/1] bg-zinc-100 dark:bg-zinc-900" : "h-56"} w-full overflow-hidden rounded-2xl border dark:border-zinc-800 border-zinc-100 shadow-sm`}>
                                         <Image
                                             src={img.src}
                                             alt={img.label}
                                             fill
-                                            className="object-cover transition-transform duration-700 group-hover:scale-110"
+                                            className={contain ? "object-contain" : "object-cover transition-transform duration-700 group-hover:scale-110"}
                                             unoptimized
                                         />
                                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
